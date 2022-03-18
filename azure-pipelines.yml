@@ -22,3 +22,7 @@ steps:
     npm install
     ng build --prod
   displayName: 'npm install and build'
+
+- script: |
+    ls -hal
+  displayName: 'list file system content'
