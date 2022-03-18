@@ -23,6 +23,19 @@ steps:
     ng build --prod
   displayName: 'npm install and build'
 
+- task: CopyFiles@2
+  inputs:
+    SourceFolder: 'dist'
+    Contents: '**/**'
+    TargetFolder: 'myangularapp/dist'
+  displayName: 'copy dist folder'
+- task: PublishPipelineArtifact@1
+  inputs:
+    targetPath: 'dist'
+    publishLocation: 'pipeline'
+  displayName: 'publish artifacts'
+
 - script: |
     ls -hal
-  displayName: 'list file system content'
+  displayName: 'list filesystem'
+  
