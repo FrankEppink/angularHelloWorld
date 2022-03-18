@@ -36,6 +36,12 @@ steps:
     publishLocation: 'pipeline'
   displayName: 'publish artifacts'
 
+- task: S3Upload@0
+  inputs:
+    BucketName: 'S3DummyBucket'
+    File: '$(Build.ArtifactStagingDirectory)/hello-world'
+    Key: 'hello-world'
+
 # - script: |
 #     ls -hal
 #   displayName: 'list filesystem'
