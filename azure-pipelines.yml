@@ -36,11 +36,13 @@ steps:
     publishLocation: 'pipeline'
   displayName: 'publish artifacts'
 
-- task: S3Upload@0
-  inputs:
-    BucketName: 'S3DummyBucket'
-    File: '$(Build.ArtifactStagingDirectory)/hello-world'
-    Key: 'hello-world'
+# - task: S3Upload@1
+#   inputs:
+#     regionName: 'eu-central-1'
+#     bucketName: 'S3DummyBucket'
+#     sourceFolder: 'dist'
+#     globExpressions: '**'
+
 
 # - script: |
 #     ls -hal
