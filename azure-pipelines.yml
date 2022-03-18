@@ -10,9 +10,11 @@ pool:
   vmImage: ubuntu-latest
 
 steps:
+# https://docs.microsoft.com/en-us/azure/devops/pipelines/tasks/tool/node-js?view=azure-devops
+# install Node.js
 - task: NodeTool@0
   inputs:
-    versionSpec: '10.x'
+    versionSpec: '16.x'
   displayName: 'Install Node.js'
 
 - script: |
